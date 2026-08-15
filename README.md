@@ -101,8 +101,7 @@ Jars land in `forge/build/libs/` and `neoforge/build/libs/`.
 ```
 cd proxy-go
 go build -o aibots-proxy.exe .
-# copy main.json.example to main.json, paste your Gemini key
-aibots-proxy.exe
+aibots-proxy.exe   # creates main.json from main.json.example on first run; edit it and set your key
 ```
 
 `POST http://localhost:8844/generate` with `{"system": "...", "prompt": "..."}` returns

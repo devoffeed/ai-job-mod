@@ -17,6 +17,10 @@ Put your API key in `main.json` (next to the exe), then:
 aibots-proxy.exe
 ```
 
+If `main.json` does not exist yet, the proxy creates it automatically from
+`main.json.example` on first run — just edit `main.json`, paste your key, and
+restart.
+
 Optional env vars override `main.json`:
 
 | Env              | JSON field | Default                                             |

@@ -77,11 +77,33 @@ type askJob struct {
 	err    chan error
 }
 
+// ensureMainJSON creates main.json from main.json.example on first run, so the
+// proxy works out of the box after downloading the release (which ships only
+// the .example template, never a real key).
+func ensureMainJSON() {
+	example, err := os.ReadFile("main.json.example")
+	if err != nil {
+		log.Printf("warning: no main.json and no main.json.example to init from: %v", err)
+		return
+	}
+	if err := os.WriteFile("main.json", example, 0o644); err != nil {
+		log.Printf("warning: cannot create main.json from example: %v", err)
+		return
+	}
+	log.Printf("main.json not found - created from main.json.example. Edit main.json and set your API key.")
+}
+
 func loadConfig() {
 	data, err := os.ReadFile("main.json")
 	if err != nil {
 		if !errors.Is(err, os.ErrNotExist) {
 			log.Printf("warning: cannot read main.json: %v", err)
+		} else {
+			ensureMainJSON()
+			data, err = os.ReadFile("main.json")
+			if err != nil {
+				log.Printf("warning: cannot read main.json after init: %v", err)
+			}
 		}
 	} else {
 		var cfg fileConfig
