@@ -118,3 +118,8 @@ aibots-proxy.exe
 ## License
 
 Licensed under the **Apache License, Version 2.0**. See [LICENSE](LICENSE).
+
+## Disclaimer
+
+This project is provided "as is", without warranty of any kind. Use at your own risk.
+See [DISCLAIMER.md](DISCLAIMER.md) for the full disclaimer of liability.
