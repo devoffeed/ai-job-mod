@@ -1,5 +1,5 @@
 {
-  "apiKey": "AIzaSyPASTE_YOUR_GEMINI_KEY_HERE",
+  "apiKey": "YOUR_GEMINI_API_KEY",
   "model": "gemini-3.5-flash-lite",
   "apiUrl": "https://generativelanguage.googleapis.com/v1beta",
   "addr": "localhost:8844"
