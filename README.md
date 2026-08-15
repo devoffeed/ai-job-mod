@@ -108,6 +108,13 @@ aibots-proxy.exe
 `POST http://localhost:8844/generate` with `{"system": "...", "prompt": "..."}` returns
 `{"reply": "..."}`. The proxy runs 3 worker goroutines.
 
+> **Security disclaimer:** `proxy-go/main.json` holds your real Gemini API key. It is
+> git-ignored and must **never** be committed or pushed to any repository. Only commit the
+> placeholder file `proxy-go/main.json.example`. If you ever expose a key (paste it in a chat,
+> log, or commit), **revoke it immediately** at https://console.cloud.google.com/apis/credentials
+> and generate a new one. The key lives only in the local proxy, never inside Minecraft or the
+> mod source.
+
 ## License
 
 Licensed under the **Apache License, Version 2.0**. See [LICENSE](LICENSE).
