@@ -1,0 +1,37 @@
+modLoader = "javafml"
+loaderVersion = "[47,)"
+license = "Apache-2.0"
+issueTrackerURL = ""
+
+[[mods]]
+modId = "aibots"
+version = "1.0.0"
+displayName = "AI Bots"
+clientSideOnly = true
+description = """
+Adds AI-powered NPCs and a chat bot to Minecraft.
+
+Features:
+- Talk to NPCs in the world (right-click to start a conversation)
+- /ask <message> - ask a question to your AI assistant or current NPC
+- Supports OpenAI, Google Gemini, and OpenRouter providers
+- Async requests - never blocks the game thread
+
+Configuration is stored in config/aibots.json.
+"""
+authors = "AI Bots"
+credits = "AI Bots Team"
+
+[[dependencies.aibots]]
+modId = "forge"
+mandatory = true
+versionRange = "[47,)"
+ordering = "NONE"
+side = "BOTH"
+
+[[dependencies.aibots]]
+modId = "minecraft"
+mandatory = true
+versionRange = "[1.20.1,1.21)"
+ordering = "NONE"
+side = "BOTH"

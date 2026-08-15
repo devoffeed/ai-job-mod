@@ -1,0 +1,32 @@
+# --- Build output ---
+build/
+out/
+bin/
+
+# --- Gradle ---
+.gradle/
+*.class
+*.log
+
+# --- IDE ---
+.idea/
+*.iml
+.vscode/
+.settings/
+.classpath
+.project
+
+# --- Runtime / secrets ---
+main.json
+aibots.json
+aibots-debug.log
+config/
+
+# --- Proxy binaries & temp ---
+*.exe
+*.exe~
+aibots-proxy
+
+# --- OS ---
+Thumbs.db
+.DS_Store
